@@ -1,15 +1,12 @@
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
 import requests
-import matplotlib.pyplot as plt
-from PIL import Image
-from io import BytesIO
 import config
 import json
-import io
-
-
 app = Flask(__name__)
+
+
+
 api = Api(app)
 
 class Image(Resource):
@@ -29,5 +26,22 @@ class Image(Resource):
 
 api.add_resource(Image, '/image')
 
+@app.route("/")
+def hello():
+    return "Hello, World!"
+
+""" from flask import Flask
+from flask_restful import Resource, Api, reqparse
+import requests
+import matplotlib.pyplot as plt
+from PIL import Image
+from io import BytesIO
+
+import io
+
+
+app = Flask(__name__)
+
+
 if __name__ == '__main__':
-    app.run()
+    app.run() """
